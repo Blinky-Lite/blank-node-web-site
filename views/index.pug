@@ -1,6 +1,13 @@
 extends layout
 
 block content
+  script.
+    var socket;
+    $( document ).ready(function()
+    {
+       socket = io.connect(window.location.href);
+       socket.on('connect', function(data) {socket.emit('join', 'Connection from ' + '#{pageName}' + ' established.');});
+    });
   .jumbotron.jumbotron1
     h1.display-5.jumbotron-title.jumbotron-title1 Blank Web Site
     h2.display-5.jumbotron-title.jumbotron-title1 It's very empty!

@@ -13,4 +13,9 @@ block content
           .card-body.card1-body
             p.card1-text
               | Card text!
-            a.btn.card-button.card1-button(href='https://www.google.com/', target='_blank') Google
+            button.btn.card-button.card1-button(type='button', onclick="myFunction()") Alert
+    script.
+     function myFunction()
+     {
+       alert('Hello world!');
+     }
