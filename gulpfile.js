@@ -7,7 +7,7 @@ const livereload = require('gulp-livereload');
 gulp.task('develop', () => {
   livereload.listen();
   nodemon({
-    script: 'bin/www',
+    script: 'app.js',
     ext: 'js pug coffee',
     stdout: false
   }).on('readable', function () {

@@ -6,9 +6,12 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+var socketio = require('socket.io');
+
 var expressGoogleAnalytics = require('express-google-analytics');
 //var analytics = expressGoogleAnalytics('UA-122300334-1');
 var dotenv = require('dotenv').config();
+var clientsConnected = 0;
 
 const indexRoute = require('./routes/index');
 const readMoreRoute = require('./routes/readmore');
@@ -62,4 +65,15 @@ app.use((err, req, res, next) => {
     });
 });
 
-module.exports = app;
+app.set('port', process.env.PORT || 3000);
+
+var server = app.listen(app.get('port'), function() {
+  console.log('Express server listening on port ' + server.address().port);
+});
+var websocketio = socketio(server);
+websocketio.on('connection', function(browserClient)
+{
+  console.log('Number of connected clients: ' + ++clientsConnected);
+  browserClient.on('join', function(data){console.log(data);});
+  browserClient.on('disconnect', function() {console.log('Number of connected clients: ' + --clientsConnected);});
+});
