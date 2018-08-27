@@ -14,7 +14,6 @@ var dotenv = require('dotenv').config();
 var clientsConnected = 0;
 
 const indexRoute = require('./routes/index');
-const readMoreRoute = require('./routes/readmore');
 
 const app = express();
 
@@ -36,7 +35,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //app.use(analytics);
 app.use('/', indexRoute);
-app.use('/readmore', readMoreRoute);
 
 
 /// error handlers

@@ -1,86 +1,90 @@
+:root {
+  --background-color: #7395ae;
+  --container-background-color: #557a95;
+  --container-title-color: #fdc300;
+  --container-text-color: #ffffff;
+  --sub-container-background-color: #bbbbbb;
+  --sub-container-title-color: #fdc300;
+  --sub-container-text-color: #000000;
+}
 body {
-  background-color: #7395ae;
+  background-color: var(--background-color);
   padding-left:25px;
   padding-right:25px;
 }
-a {
-  color: #444444;
+.linktext {
+  color: var(--container-title-color);
+  text-decoration: underline;
 }
+.linkicon {
+  padding: 20px;
+  color: var(--container-background-color);
+}
+
 img {
   object-fit: contain;
 }
 .col {
   padding-bottom: 20px;
 }
-.jumbotron1 {
-  background-color:#557a95 !important;
-  color:#ffffff
+.jumbotron {
+  background-color: var(--container-background-color) !important;
+  color:var(--container-text-color);
 }
-.jumbotron-title1
+.jumbotron-title
 {
-  color:#fdc300
+  color:var(--container-title-color);
 }
 .jumbotron-button
 {
-  color: #557a95;
-  background-color: #bbbbbb;
+  color: var(--container-background-color);
+  background-color: var(--container-title-color);
 }
-.featurette-heading1
+.featurette-heading
 {
-  color:#ffffff
+  color:var(--container-text-color);
 }
-.card1
+.card
 {
-  background-color: #557a95;
+  background-color: var(--container-background-color);
   text-align: center;
   padding: 10px;
 }
-.card2
+.card-body
 {
-  padding: 5px;
-  color: #cccccc;
-  background-color: #333344;
-  width: 100%;
-  display: inline-block;
-/*  overflow-x: scroll; */
-  overflow-y: hidden;
-  white-space: nowrap;
+  color: var(--sub-container-text-color);
+  background-color: var(--sub-container-background-color);
 }
-.card1-body
+.card-button
 {
-  background-color: #bbbbbb;
+  color: var(--container-title-color);
+  font-weight: bold;
+  background-color: var(--container-background-color);
 }
-.card1-button
+.card-title
 {
-  color: #bbbbbb;
-  background-color: #557a95
-}
-.card1-title
-{
-  color: #ffbb33;
+  color: var(--container-title-color);
   font-weight: bold;
 }
-.card1-major-bullet
+.card-major-bullet
 {
-  color: #000000;
   text-align: left;
 }
 .card1-minor-bullet
 {
   text-align: left;
 }
-.card1-minor-minor-bullet {
+.card-minor-minor-bullet {
 	font-size: : small;
   font-style:italic;
-  color: #5d5d5d;
 }
 
-.card1-text
+.card-text
 {
   text-align: left;
 }
 .scrolling-wrapper {
-  width: 100%;
+  width: 100%;left
   display: inline-block;
   overflow-x: scroll;
   overflow-y: hidden;
@@ -91,8 +95,8 @@ img {
    left: 0;
    bottom: 0;
    width: 100%;
-   color:#fdc300;
-   background-color: #7395ae;
+   color:var(--container-background-color);
+   background-color: var(--background-color);
    text-align: center;
 }
 .img-max {
@@ -101,4 +105,20 @@ img {
 .bot-pad
 {
   padding-bottom: 20px;
+}
+.span-left-justify
+{
+  float:left;
+}
+.right-justify
+{
+  text-align: right;
+}
+.center-justify
+{
+  text-align: center;
+}
+.solarPlotButton
+{
+  width :90%;
 }
